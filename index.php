@@ -11,14 +11,15 @@
         <h1>Projekt SDD</h1>
     </header>
     <main>
-
         <?php 
             // Zmienna sql przechowuje łączenie z dazą danych MySQL. Funkcja mysqli_connect przymuje do dokładniejszego określenia z jaką dazą danych się łączymy, pierwszy parametr to nazwa hosta, drugi to nazwa użytkownika, trzeci to hasło, a czwarty to nazwa bazy danych.
-            if ($sql = mysqli_connect("localhost", "root", "", "a01baza"))
+            if ($sql = mysqli_connect("localhost", "root", "", "a01baza")){
                 // echo "<p>Połączenie z bazą danych powiodło się</p>";
-            else
+            }
+            else {
                 echo "<p>Nie udało się podłączyć z bazą danych</p>";
-            if ($SERVER["REQUEST_METHOD"] == "POST") {
+            }
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $imie = htmlspecialchars($_POST["imie"]);
                 $naz = htmlspecialchars($_POST["naz"]);
                 $tel = $_POST["tel"];
@@ -26,11 +27,12 @@
                 $ad = htmlspecialchars($_POST["ad"]);
                 $uwa = htmlspecialchars($_POST["uwa"]);
             }
+            echo $imie;
             mysqli_close($sql);
         ?>
     </main>
     <footer>
-        <p>Autor: Nikodem Napert</p>
+        <p>Autor: Nikodem Naperty</p>
     </footer>
 </body>
 </html>

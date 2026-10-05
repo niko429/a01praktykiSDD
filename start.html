@@ -12,18 +12,33 @@
     </header>
     <main>
         <div id="lewo">
+            <h2>Dodaj osobę</h2>
             <form action="index.php" method="POST">
-
+                <label for="imie">Wpisz imię: </label>
+                <input type="text" name="imie" id="imie" required><br>
+                <label for="nazwisko">Wpisz nazwisko: </label>
+                <input type="test" name="naz" id="nazwisko" required><br>
+                <label for="telfon">Wpisz nr. telefonu: </label>
+                <input type="text" name="tel" id="telfon" placeholder="000-000-000" required><br>
+                <label for="email">Wpisz <a href="https://gmail.com" title="Nie masz e-mail'a? To zapraszam założyć">e-mail</a>: </label>
+                <input type="emmail" name="mail" id="email" placeholder="nazwa_email'a@example.com" required><br>
+                <label for="adres">Wpisz adres: </label>
+                <input type="text" name="ad" id="adres" required><br>
+                <label for="uwaga">Dopisz uwagi: </label>
+                <input type="text" name="uwa" id="uwaga"><br>
+                <input type="submit" value="Dodaj osobę" class="dod">
+                <input type="reset" value="Wyczyść formulaż" class="wycz">
             </form>
         </div>
         <div id="prawo">
+            <h2>Dodaj instytucje</h2>
             <form action="index1.php" method="POST">
-                
+
             </form>
         </div>
     </main>
     <footer>
-        <p>Autor: Nikodem Napert</p>
+        <p>Autor: Nikodem Naperty</p>
     </footer>
 </body>
 </html>

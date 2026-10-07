@@ -6,7 +6,7 @@ html {
 }
 
 header {
-    width: 250px;
+    width: 270px;
     border: 2px rgb(200,200,200) ridge;
     border-radius: 5px;
     text-align: center;
@@ -59,6 +59,16 @@ th,td {
     transition: 0.7s;
 }
 
+button {
+    background-color: rgb(22,22,22);
+    color: rgb(222,222,222);
+    border: 1px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 350px;
+    transition: 0.7s;
+}
+
 /* 2. Klasy */
 .dod {
     background-color: rgb(0,125,0);
@@ -80,6 +90,19 @@ th,td {
     transition: 0.7s;
     margin-left: 2.5px;
     width: 100px;
+}
+
+.pudlo {
+    background-color: rgb(22,22,22);
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+    font-size: 240%;
+    transition: 0.7s;
 }
 
 /* 2.1. Klasy z : */
@@ -104,6 +127,26 @@ th,td {
     scale: 1.06;
 }
 
+.pudlo:hover {
+    scale: 1.1;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.podswietlenie:hover {
+    color: white;
+    background-color: black;
+    scale: 1.05;
+}
+
+.lewo_ale_klasa {
+    float: left;
+}
+
+.prawo_ale_klasa {
+    float: right;
+}
+
 /* 3. Id */
 #lewo {
     width: 45%;
@@ -123,6 +166,10 @@ th,td {
     margin-right: 2%;
     text-align: center;
     float: right;
+}
+
+#uklad {
+    display: flex;
 }
 /* 3.1. Id z : */
 
@@ -179,11 +226,12 @@ a:visited:hover {
     color: lime;
 }
 
-label>a {
+label>a, header>h1>a, .pudlo>a {
     text-decoration: none;
 }
 
-td:hover, th:hover {
+button:hover {
+    background-color: black;
     color: white;
-    scale: 1.05;
+    scale: 1.1;
 }

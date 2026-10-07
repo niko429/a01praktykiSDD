@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nikodem">
+    <title>Projekt SDD</title>
+    <link rel="stylesheet" href="../CSS/styl.css">
+</head>
+<body>
+    <header>
+        <h1>Projekt SDD</h1>
+    </header>
+    <main>
+        <div id="lewo">
+            <h2>Dodaj osobę</h2>
+            <form action="../PHP/osoby.php" method="POST">
+                <label for="imie">Wpisz imię: </label>
+                <input type="text" name="imie" id="imie" required><br>
+                <label for="nazwisko">Wpisz nazwisko: </label>
+                <input type="test" name="naz" id="nazwisko" required><br>
+                <label for="telfon">Wpisz nr. telefonu: </label>
+                <input type="text" name="tel" id="telfon" placeholder="000-000-000" required><br>
+                <label for="email">Wpisz <a href="https://gmail.com" title="Nie masz e-mail'a? To zapraszam założyć">e-mail</a>: </label>
+                <input type="email" name="mail" id="email" placeholder="nazwa_email'a@example.com" required><br>
+                <label for="adres">Wpisz adres: </label>
+                <input type="text" name="ad" id="adres" required><br>
+                <label for="uwaga">Dopisz uwagi: </label>
+                <input type="text" name="uwa" id="uwaga"><br>
+                <input type="submit" value="Dodaj osobę" class="dod">
+                <input type="reset" value="Wyczyść formulaż" class="wycz">
+            </form>
+        </div>
+        <div id="prawo">
+            <h2>Dodaj instytucje</h2>
+            <form action="../PHP/instytucja.php" method="POST">
+                <label for="nazwa1">Wpisz nazwę: </label>
+                <input type="text" name="naz1" id="nazwa1" required><br>
+                <label for="telefon1">Wpisz nr. telefonu: </label>
+                <input type="text" name="tel1" id="telefon1" placeholder="000-000-000" required><br>
+                <label for="email1">Wpisz <a href="https://gmail.com" title="Nie masz e-mail'a? To zapraszam założyć">e-mail</a>: </label>
+                <input type="email" name="mail1" id="email1" placeholder="nazwa@example.com" required><br>
+                <label for="adres1">Wpisz adres: </label>
+                <input type="text" name="ad1" id="adres1" required><br>
+                <label for="strona">Wpisz stronę internetową: </label>
+                <input type="text" name="str" id="strona" placeholder="www.example.com"><br>
+                <label for="uwaga1">Dopisz uwagę: </label>
+                <input type="text" name="uwa1" id="uwaga1"><br>
+                <input type="submit" value="Dodaj instytucje" class="dod">
+                <input type="reset" value="Wyczyść formulaż" class="wycz">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Autor: Nikodem Naperty, <a href="./start.html">Powrót do głównej strony?</a></p>
+    </footer>
+</body>
+</html>

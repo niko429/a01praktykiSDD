@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nikodem">
-    <title>Projekt SDD</title>
+    <title>Lista instytucji</title>
     <link rel="stylesheet" href="../CSS/styl.css">
 </head>
 <body>
     <header>
-        <h1>Projekt SDD</h1>
+        <h1>Lista inst.</h1>
     </header>
     <main>
         <?php 
@@ -42,34 +42,60 @@
             $azapytanie = "SELECT * FROM instytucja";
             $awynik = mysqli_query($sql, $azapytanie);
             
-            echo "<table>";
+            echo "<table class='lewo_ale_klasa'";
                 echo "<tr>";
-                    echo "<th>Id</th>";
-                    echo "<th>Nazwa</th>";
-                    echo "<th>Telefon</th>";
-                    echo "<th>E-mail</th>";
-                    echo "<th>Adres</th>";
-                    echo "<th>Strona internetowa</th>";
-                    echo "<th>Uwagi</th>";
-                    echo "<th>Edycja?</th>";
+                    echo "<th class='podswietlenie'>Id</th>";
+                    echo "<th class='podswietlenie'>Nazwa</th>";
+                    echo "<th class='podswietlenie'>Telefon</th>";
+                    echo "<th class='podswietlenie'>E-mail</th>";
+                    echo "<th class='podswietlenie'>Adres</th>";
+                    echo "<th class='podswietlenie'>Strona internetowa</th>";
+                    echo "<th class='podswietlenie'>Uwagi</th>";
+                    echo "<th class='podswietlenie'>Edycja?</th>";
                 echo "</tr>";
                 while ($awynik1 = mysqli_fetch_row($awynik)) {
                     echo "<tr>";
-                        echo "<td>$awynik1[0]</td>";
-                        echo "<td>$awynik1[1]</td>";
-                        echo "<td>$awynik1[2]</td>";
-                        echo "<td>$awynik1[3]</td>";
-                        echo "<td>$awynik1[4]</td>";
-                        echo "<td><a href='$awynik1[5]' target='_blank'>Strona podpięta</a></td>";
-                        echo "<td>$awynik1[6]</td>";
+                        echo "<td class='podswietlenie'>$awynik1[0]</td>";
+                        echo "<td class='podswietlenie'>$awynik1[1]</td>";
+                        echo "<td class='podswietlenie'>$awynik1[2]</td>";
+                        echo "<td class='podswietlenie'>$awynik1[3]</td>";
+                        echo "<td class='podswietlenie'>$awynik1[4]</td>";
+                        echo "<td class='podswietlenie'><a href='$awynik1[5]' target='_blank'>Strona podpięta</a></td>";
+                        echo "<td class='podswietlenie'>$awynik1[6]</td>";
                         echo '<td><input type="submit" value="Tak" name="wyslij" class="wycz_plus"></td>';
                     echo "</tr>";
                 }
+            echo "</table>";
+
+            $zapytanie1 = "SELECT instytucja.id, nazwa, osoba.imie from instytucja inner join osoba on osoba.id = instytucja.id;";
+            $wynik1 = mysqli_query($sql, $zapytanie1);
+            echo "<table class='prawo_ale_klasa''>";
+                echo "<tr>";
+                    echo "<th class='podswietlenie'>Id</th>";
+                    echo "<th class='podswietlenie'>Nazwa instytucji</th>";
+                    echo "<th class='podswietlenie'>Imię</th>";
+                echo "</tr>";
+                    while ($wynik2 = mysqli_fetch_row($wynik1)){
+                        echo "<tr>";
+                            echo "<td class='podswietlenie'>$wynik2[0]";
+                            if ($wynik2[1] == ""){
+                                echo "<td class='podswietlenie'><i title='To zostało automatycznie dodane po przez skrypt oznaczający że jakimś cudem tutaj nie ma danych'>Brak imiona</i></td>";
+                            } else {
+                                echo "<td class='podswietlenie'>$wynik2[1]</td>";
+                            }
+                            if ($wynik2[2] == ""){
+                                echo "<td class='podswietlenie'><i title='To zostało automatycznie dodane po przez skrypt oznaczający że jakimś cudem tutaj nie ma danych'>Brak nazwy</i></td>";
+                            } else {
+                                echo "<td class='podswietlenie'>$wynik2[2]</td>";
+                            }
+                        echo "</tr>";
+                    }
+            echo "</table>";    
             mysqli_close($sql);
         ?>
     </main>
     <footer>
-        <p>Autor: Nikodem Naperty. <a href="start.html">Powrót?</a></p>
+        <p>Autor: Nikodem Naperty. <a href="../HTML/start.html">Powrót do głównej strony?</a></p>
     </footer>
 </body>
 </html>

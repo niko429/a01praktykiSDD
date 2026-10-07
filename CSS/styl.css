@@ -29,6 +29,16 @@ h2 {
     padding: 10px;
 }
 
+h3 {
+    text-align: center;
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    transition: 0.7s;
+    width: 90px;
+    margin: 12.5px auto;
+    padding: 10px; 
+}
+
 footer {
     clear: both;
     margin-top: 25px;
@@ -105,6 +115,27 @@ button {
     transition: 0.7s;
 }
 
+.lewo_ale_klasa {
+    float: left;
+}
+
+.prawo_ale_klasa {
+    float: right;
+}
+
+.box {
+    background-color: rgb(22,22,22);
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    font-size: 125%;
+    transition: 0.7s;
+}
+
 /* 2.1. Klasy z : */
 .dod:hover {
     background-color: rgb(0,222,0);
@@ -139,12 +170,9 @@ button {
     scale: 1.05;
 }
 
-.lewo_ale_klasa {
-    float: left;
-}
-
-.prawo_ale_klasa {
-    float: right;
+.box:hover {
+    scale: 1.1;
+    background-color: black;
 }
 
 /* 3. Id */

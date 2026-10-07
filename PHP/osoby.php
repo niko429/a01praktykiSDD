@@ -17,7 +17,7 @@
                 // echo "<p>Połączenie z bazą danych powiodło się</p>";
             }
             else {
-                echo "<p>Nie udało się podłączyć z bazą danych</p>";
+                echo "<p>Nie udało się podłączyć z bazą danych</p>".mysqli_error();
             }
             // Tutaj skorzyłem z pomocy ,,gemini" aby mógł mi to poprawić ponieważ wcześniej robiłem same isset($zmienna) = htmlspecialchars($_POST["zmienna"]), oczywiście działało ale po dodaniu drugiego formulaża w HTML to zaczeło się psuć i nie wiedziałem jak to naprawić.
             if ($_SERVER["REQUEST_METHOD"] === "POST") {

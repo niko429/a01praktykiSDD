@@ -1,0 +1,1 @@
+JS, został dodany tylko dlatego aby nieco urozjamicić tabele osoby oraz instytucje, tak to nie mają one sensu. Zapewne da się jakoś łatwiej zrobić to bez JS ale po prostu nie mam na tyle wiedzy aby zrobić to bez tego, chociaż będzie więcej języków użytych :p

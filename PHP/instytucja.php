@@ -57,11 +57,15 @@
                     echo "<tr>";
                         echo "<td class='podswietlenie'>$awynik1[0]</td>";
                         echo "<td class='podswietlenie'>$awynik1[1]</td>";
-                        echo "<td class='podswietlenie'>$awynik1[2]</td>";
+                        echo "<td class='podswietlenie'>+48 $awynik1[2]</td>";
                         echo "<td class='podswietlenie'>$awynik1[3]</td>";
                         echo "<td class='podswietlenie'>$awynik1[4]</td>";
                         echo "<td class='podswietlenie'><a href='$awynik1[5]' target='_blank'>Strona podpięta</a></td>";
-                        echo "<td class='podswietlenie'>$awynik1[6]</td>";
+                        if ($awynik1[6] == ""){
+                            echo "<td class='podswietlenie' title='Zostało to wypełnione automatycznie przez skrypt'><i>Brak uwag</i></td>";
+                        } else {
+                            echo "<td class='podswietlenie'>$awynik1[6]</td>";
+                        }
                         echo '<td><input type="submit" value="Tak" name="wyslij" class="wycz_plus"></td>';
                     echo "</tr>";
                 }

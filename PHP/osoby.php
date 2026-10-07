@@ -60,7 +60,11 @@
                         echo "<td class='podswietlenie'>+48 $awynik1[3]</td>";
                         echo "<td class='podswietlenie'>$awynik1[4]</td>";
                         echo "<td class='podswietlenie'>$awynik1[5]</td>";
-                        echo "<td class='podswietlenie'>$awynik1[6]</td>";
+                        if ($awynik1[6] == ""){
+                            echo "<td class='podswietlenie' title='Zostało to wypełnione automatycznie przez skrypt'><i>Brak uwag</i></td>";
+                        } else {
+                            echo "<td class='podswietlenie'>$awynik1[6]</td>";
+                        }
                         echo '<td><input type="submit" value="Tak" name="wyslij" class="wycz_plus"></td>';
                     echo "</tr>";
                 }

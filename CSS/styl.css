@@ -1,0 +1,189 @@
+/* 1. Ogólne */
+html {
+    background-color: rgb(22,22,22);
+    color: rgb(222,222,222);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    width: 250px;
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    transition: 0.7s;
+    padding: 0;
+}
+
+div {
+    margin-top: 25px;
+}
+
+h2 {
+    text-align: center;
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    transition: 0.7s;
+    width: 250px;
+    margin: 12.5px auto;
+    padding: 10px;
+}
+
+footer {
+    clear: both;
+    margin-top: 25px;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px rgb(200,200,200) ridge;
+    background-color: rgb(22,22,22);
+    color: rgb(222,222,222);
+    margin-bottom: 7.5px;
+    transition: 0.7s;
+}
+
+a {
+    color: rgb(222,0,0);
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px rgb(200,200,200) ridge;
+}
+
+th,td {
+    border: 1px rgb(200,200,200) ridge;
+    padding: 5px;
+    text-align: center;
+    transition: 0.7s;
+}
+
+/* 2. Klasy */
+.dod {
+    background-color: rgb(0,125,0);
+    color: black;
+    transition: 0.7s;
+    margin-right: 2.5px;
+}
+
+.wycz {
+    background-color: rgb(125,0,0);
+    color: black;
+    transition: 0.7s;
+    margin-left: 2.5px;
+}
+
+.wycz_plus {
+    background-color: rgb(155, 100, 0);
+    color: black;
+    transition: 0.7s;
+    margin-left: 2.5px;
+    width: 100px;
+}
+
+/* 2.1. Klasy z : */
+.dod:hover {
+    background-color: rgb(0,222,0);
+    color: black;
+    border-radius: 10px;
+    scale: 1.06;
+}
+
+.wycz:hover {
+    background-color: rgb(222,0,0);
+    color: black;
+    border-radius: 10px;
+    scale: 1.06;
+}
+
+.wycz_plus:hover {
+    background-color: rgb(255,150,0);
+    color: black;
+    border-radius: 10px;
+    scale: 1.06;
+}
+
+/* 3. Id */
+#lewo {
+    width: 45%;
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    transition: 0.7s;
+    margin-left: 2%;
+    text-align: center;
+    float: left;
+}
+
+#prawo {
+    width: 45%;
+    border: 2px rgb(200,200,200) ridge;
+    border-radius: 5px;
+    transition: 0.7s;
+    margin-right: 2%;
+    text-align: center;
+    float: right;
+}
+/* 3.1. Id z : */
+
+#lewo:hover {
+    border: 2px white ridge;
+    border-radius: 10px;
+    scale: 1.06;
+}
+
+#prawo:hover {
+    border: 2px white ridge;
+    border-radius: 10px;
+    scale: 1.06;
+}
+
+/* 4. Inne */
+
+header>h1 {
+    margin: 15px 15px;
+}
+
+header:hover {
+    border: 2px white ridge;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    scale: 1.1;
+}
+
+h2:hover {
+    border: 2px white ridge;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    scale: 1.1;
+}
+
+input:hover {
+    border: 1px white ridge;
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+a:visited {
+    color: rgb(0,222,0);
+}
+
+a:visited:hover {
+    color: lime;
+}
+
+label>a {
+    text-decoration: none;
+}
+
+td:hover, th:hover {
+    color: white;
+    scale: 1.05;
+}

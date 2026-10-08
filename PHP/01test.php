@@ -4,5 +4,6 @@
     <meta charset="UTF-8">
 
 <?php 
-    require './includes/footer.php'
+    require './includes/footer.php';
+    include './config.php';
 ?>

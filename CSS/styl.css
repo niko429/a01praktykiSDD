@@ -99,7 +99,7 @@ button {
     color: black;
     transition: 0.7s;
     margin-left: 2.5px;
-    width: 100px;
+    padding: 2.75px;
 }
 
 .pudlo {
@@ -153,6 +153,16 @@ button {
     transition: 0.7s;
 }
 
+.zwykly_border {
+    border: 2px rgb(222,222,222) ridge;
+    border-radius: 5px;
+    padding: 20px;
+    transition: 0.7s;
+}
+
+.minus_piec, .minus_dwa_pol, .dwa_pol, .piec {
+    transition: 0.7s;
+}
 /* 2.1. Klasy z : */
 .dod:hover {
     background-color: rgb(0,222,0);
@@ -172,7 +182,7 @@ button {
     background-color: rgb(255,150,0);
     color: black;
     border-radius: 10px;
-    scale: 1.06;
+    scale: 1.075;
 }
 
 .pudlo:hover, .pudlo_plus:hover {
@@ -193,11 +203,11 @@ button {
 }
 
 .pudlo_plus:hover {
-    rotate: 5deg;
+    rotate: 2.5deg;
 }
 
 .pudlo_plus1:hover {
-    rotate: -5deg;
+    rotate: -2.5deg;
 }
 
 .tło_sara:hover {
@@ -215,7 +225,31 @@ button {
     background-image: url(../Grafiki/20260719_235112.jpg);
     background-size: 665px 100px;
     background-repeat: no-repeat;
+    rotate: 9999deg;
 }
+
+.zwykly_border:hover {
+    border: 2px white ridge;
+    border-radius: 10px;
+    scale: 1.05;
+}
+
+.minus_piec:hover {
+    rotate: -5deg;
+}
+
+.minus_dwa_pol:hover {
+    rotate: -2.5deg
+}
+
+.dwa_pol:hover {
+    rotate: 2.5deg
+}
+
+.piec:hover {
+    rotate: 5deg;
+}
+
 
 /* 3. Id */
 #lewo {

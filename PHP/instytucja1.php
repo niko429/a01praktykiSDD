@@ -39,7 +39,7 @@
                 echo "<p>Nie wysłano danych z formularza</p>";
             }
 
-            $azapytanie = "SELECT * FROM instytucja";
+            $azapytanie = "SELECT * FROM instytucja ORDER BY id DESC";
             $awynik = mysqli_query($sql, $azapytanie);
             
             echo "<table class='lewo_ale_klasa'";
@@ -68,11 +68,11 @@
                     echo "</tr>";
                 }
                 echo "<tr>";
-                    echo "<td colspan='7'><a href='./instytucja1.php'>Filtrowanie od największej względem ID</a></td>";
+                    echo "<td colspan='7'><a href='./instytucja.php'>Filtrowanie od najmniejszej względem ID</a></td>";
                 echo "</tr>";
             echo "</table>";
 
-            $zapytanie1 = "SELECT instytucja.id, nazwa, osoba.imie from instytucja inner join osoba on osoba.id = instytucja.id;";
+            $zapytanie1 = "SELECT instytucja.id, nazwa, osoba.imie from instytucja inner join osoba on osoba.id = instytucja.id ORDER BY instytucja.id DESC";
             $wynik1 = mysqli_query($sql, $zapytanie1);
             echo "<table class='prawo_ale_klasa''>";
                 echo "<tr>";

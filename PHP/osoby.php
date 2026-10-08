@@ -46,11 +46,10 @@
                     echo "<th class='podswietlenie'>Id</th>";
                     echo "<th class='podswietlenie'>Imie</th>";
                     echo "<th class='podswietlenie'>Nazwisko</th>";
-                    echo "<th class='podswietlenie'>Telefon</th>";
+                    echo "<th class='podswietlenie'>Nr. Telefonu</th>";
                     echo "<th class='podswietlenie'>E-mail</th>";
                     echo "<th class='podswietlenie'>Adres</th>";
                     echo "<th class='podswietlenie'>Uwagi</th>";
-                    echo "<th class='podswietlenie'>Edycja?</th>";
                 echo "</tr>";
                 while ($awynik1 = mysqli_fetch_row($awynik)) {
                     echo "<tr>";
@@ -65,7 +64,6 @@
                         } else {
                             echo "<td class='podswietlenie'>$awynik1[6]</td>";
                         }
-                        echo '<td><input type="submit" value="Tak" name="wyslij" class="wycz_plus"></td>';
                     echo "</tr>";
                 }
             echo "</table>";
@@ -124,9 +122,10 @@
             echo "</table>";    
             mysqli_close($sql);
         ?>
-        <script src="../JS/button.js">
-
-        </script>
+        <div style="display: flex;">
+            <h2 style="width: 100px;"><a href="./edycjaOsoba.php" style="text-decoration: none;">Edycja?</a></h2>
+            <h2 style="width: 100px;"><a href="./usunOsoba.php" style="text-decoration: none;">Usunąć?</a></h2>
+        </div>
     </main>
     <footer>
         <p>Autor: Nikodem Naperty. <a href="../HTML/start.html">Powrót do głównej strony?</a></p>

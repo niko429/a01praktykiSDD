@@ -13,6 +13,11 @@
     <main>
         <?php 
             require_once './config.php';
+                // if ($sql = mysqli_connect('localhost','root','','a01baza')){
+                //     // echo "<p>Udało się podłączyć z bazą danych</p>";
+                // } else {
+                //     echo "<p>Nie udało się podłączyć z bazą danych</p>";
+                // }
             
             // Tutaj skorzyłem z pomocy ,,gemini" aby mógł mi to poprawić ponieważ wcześniej robiłem same isset($zmienna) = htmlspecialchars($_POST["zmienna"]), oczywiście działało ale po dodaniu drugiego formulaża w HTML to zaczeło się psuć i nie wiedziałem jak to naprawić.
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -36,6 +41,9 @@
             $azapytanie = "SELECT * FROM osoba";
             $awynik = mysqli_query($sql, $azapytanie);
             
+            // Chce zroibć tak że te ,,azapytanie" i ten wynik będzie w tym pliku oraz ta tabela, choć nie wiem jak to dalej z
+            require_once './db.php';
+
             echo "<table class='lewo_ale_klasa'>";
                 echo "<tr>";
                     echo "<th class='podswietlenie'>Id</th>";

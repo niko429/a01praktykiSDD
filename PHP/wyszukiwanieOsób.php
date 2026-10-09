@@ -32,11 +32,7 @@
             </form>
             <h3>Wynik</h2>
             <?php
-                if ($sql = mysqli_connect('localhost','root','','a01baza')){
-                    // echo "Udało się podłączyć z bazą danych";
-                } else {
-                    echo "Nie udało się podłączyć".mysqli_error();
-                }
+                require_once './config.php';
 
                 if ($_SERVER["REQUEST_METHOD"] === "POST"){
                     $imie = isset($_POST["imie"]) ? htmlspecialchars($_POST["imie"]) : "";

@@ -12,13 +12,7 @@
     </header>
     <main>
         <?php 
-            // Zmienna sql przechowuje łączenie z dazą danych MySQL. Funkcja mysqli_connect przymuje do dokładniejszego określenia z jaką dazą danych się łączymy, pierwszy parametr to nazwa hosta, drugi to nazwa użytkownika, trzeci to hasło, a czwarty to nazwa bazy danych.
-            if ($sql = mysqli_connect("localhost", "root", "", "a01baza")){
-                // echo "<p>Połączenie z bazą danych powiodło się</p>";
-            }
-            else {
-                echo "<p>Nie udało się podłączyć z bazą danych</p>".mysqli_error();
-            }
+            require_once './config.php';
 
             // Tutaj skorzyłem z pomocy ,,gemini" aby mógł mi to poprawić ponieważ wcześniej robiłem same isset($zmienna) = htmlspecialchars($_POST["zmienna"]), oczywiście działało ale po dodaniu drugiego formulaża w HTML to zaczeło się psuć i nie wiedziałem jak to naprawić.
             if ($_SERVER["REQUEST_METHOD"] === "POST") {

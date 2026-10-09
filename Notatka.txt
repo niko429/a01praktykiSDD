@@ -1,0 +1,10 @@
+Co trzeba poprawić?
+
+Do poprawy jest tak:
+    W config.php ma być łączenie co do bazy SQL
+    Zapytania mają być w pliku db.php aby nie były w plikach bezsensownie oraz chodzi o bezpieczeńswo
+    (Jest to tylko do poprawy gdy ktoś jeszcze będzie czytał kod) poprawić naz klas
+    Gdy są dłusze funkcje z np. while'm to dodać specialnie pod to include aby nie syfić lub po prostu jakąś funkcje
+    Dodać to że footer oraz header jest w include aby nie kopiować tego samego i zmniejszać szybkość kodu bez sensownie
+    Dodać README.md
+    Dodać .gitignore aby tam było nasze pliki typu: config.php oraz db.php żeby one nie zajmowały miejsca

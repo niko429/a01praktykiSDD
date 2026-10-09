@@ -69,16 +69,6 @@ th,td {
     transition: 0.7s;
 }
 
-button {
-    background-color: rgb(22,22,22);
-    color: rgb(222,222,222);
-    border: 1px rgb(200,200,200) ridge;
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 350px;
-    transition: 0.7s;
-}
-
 /* 2. Klasy */
 .dod {
     background-color: rgb(0,125,0);
@@ -160,7 +150,7 @@ button {
     transition: 0.7s;
 }
 
-.minus_piec, .minus_dwa_pol, .dwa_pol, .piec {
+.obrot_piec_minus, .obrot_dwapol_minus, .obrot_dwapol, .obrot_piec {
     transition: 0.7s;
 }
 /* 2.1. Klasy z : */
@@ -234,19 +224,19 @@ button {
     scale: 1.05;
 }
 
-.minus_piec:hover {
+.obrot_piec_minus:hover {
     rotate: -5deg;
 }
 
-.minus_dwa_pol:hover {
+.obrot_dwapol_minus:hover {
     rotate: -2.5deg
 }
 
-.dwa_pol:hover {
+.obrot_dwapol:hover {
     rotate: 2.5deg
 }
 
-.piec:hover {
+.obrot_piec:hover {
     rotate: 5deg;
 }
 
@@ -329,10 +319,4 @@ a:visited:hover {
 
 label>a, header>h1>a, .pudlo>a, .pudlo_plus>a {
     text-decoration: none;
-}
-
-button:hover {
-    background-color: black;
-    color: white;
-    scale: 1.1;
 }

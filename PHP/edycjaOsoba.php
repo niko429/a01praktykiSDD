@@ -33,12 +33,7 @@
             </form>
         </div>
         <?php
-            if ($sql = mysqli_connect("localhost", "root", "", "a01baza")){
-                // echo "<p>Połączenie z bazą danych powiodło się</p>";
-            }
-            else {
-                echo "<p>Nie udało się podłączyć z bazą danych</p>".mysqli_error();
-            }
+            require_once './config.php';
 
             $azapytanie = "SELECT * FROM osoba";
             $awynik = mysqli_query($sql, $azapytanie);

@@ -42,6 +42,7 @@
             $awynik = mysqli_query($sql, $azapytanie);
             
             // Chce zroibć tak że te ,,azapytanie" i ten wynik będzie w tym pliku oraz ta tabela, choć nie wiem jak to dalej z
+            // Nauczyć się klas i obiektów jak robić i zrobić tak że w db.php były zapytania a w config'u.php było łączenie
             require_once './db.php';
 
             echo "<table class='lewo_ale_klasa'>";

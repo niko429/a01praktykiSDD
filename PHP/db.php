@@ -11,14 +11,18 @@
             $ad = isset($_POST["ad"]) ? htmlspecialchars($_POST["ad"]) : "";
             $uwa = htmlspecialchars($_POST["uwa"]);
             
-            $zapytanie = "INSERT INTO osoba (imie, nazwisko, telefon, email, adres, uwagi) VALUES ('$imie', '$naz', '$tel', '$mail', '$ad', '$uwa')";
-            if ($wynik = mysqli_query($sql, $zapytanie)){
-                echo "<p>Dodano dane do bazy danych</p>";
-            } else {
-                echo "<p>Nie udało się dodać danych do bazy danych</p>";
-            }
-            } else {
-                echo "<p>Nie wysłano danych z formularza</p>";
+            $zapytanie = "INSERT INTO osoba (imie, nazwisko, telefon, email, adres, uwagi) VALUES (?,?,?,?,?,?)";
+                if ($stmt = mysqli_prepare($sql, $zapytanie)){
+                    mysqli_stmt_bind_param($stmt, "ssssss" ,$imie, $naz, $tel, $mail, $ad, $uwa);
+                    if (mysqli_stmt_execute($stmt)){                    
+                        echo "<p>Dodano dane do bazy danych</p>";
+                    } else {
+                        echo "<p>Nie udało się dodać danych do bazy danych</p>";
+                    }
+                    mysqli_stmt_close($stmt);
+                } else {
+                    echo "<p>Nie wysłano danych z formularza</p>";
+                }
             }
         }
 

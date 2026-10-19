@@ -33,45 +33,10 @@
             <h3>Wynik</h2>
             <?php
                 require_once './config.php';
+                require_once './db.php';
 
-                if ($_SERVER["REQUEST_METHOD"] === "POST"){
-                    $imie = isset($_POST["imie"]) ? htmlspecialchars($_POST["imie"]) : "";
-                    $naz = isset($_POST["naz"]) ? htmlspecialchars($_POST["naz"]) : "";
-                    $tel = isset($_POST["tel"]) ? htmlspecialchars($_POST["tel"]) : "";
-                    $mail = isset($_POST["mail"]) ? htmlspecialchars($_POST["mail"]) : "";
-                    $adres = isset($_POST["ad"]) ? htmlspecialchars($_POST["ad"]) : "";
-                    $naz1 = isset($_POST["naz1"]) ? htmlspecialchars($_POST["naz1"]) : "";
-                    $rola = isset($_POST["rola"]) ? htmlspecialchars($_POST["rola"]) : "";
-
-                    $zapytanie = "SELECT osoba.id, imie, nazwisko, osoba.telefon, osoba.email, osoba.adres, instytucja.nazwa FROM osoba inner join instytucja on instytucja.id = osoba.id where imie like '$imie%' and nazwisko like '$naz%' and instytucja.nazwa like '$naz1%'";
-                    $wynik = mysqli_query($sql, $zapytanie);
-                    $wynik1 = mysqli_fetch_row($wynik);
-                    
-                    echo "<table style='margin: none auto;'>";
-                        echo "<tr>";
-                            echo "<th class='podswietlenie'>Id</th>";
-                            echo "<th class='podswietlenie'>Imie</th>";
-                            echo "<th class='podswietlenie'>Nazwisko</th>";
-                            echo "<th class='podswietlenie'>Nr. Telefonu</th>";
-                            echo "<th class='podswietlenie'>E-mail</th>";
-                            echo "<th class='podswietlenie'>Adres</th>";
-                            echo "<th class='podswietlenie'>Nazwa inst.</th>";
-                            echo "<th class='podswietlenie'>Rola</th>";
-                        echo "</tr>";
-                        echo "<tr>";
-                            echo "<td class='podswietlenie'>$wynik1[0]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[1]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[2]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[3]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[4]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[5]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[6]</td>";
-                            echo "<td class='podswietlenie'>Brak</td>";
-                        echo "</tr>";
-                    echo "</table>";
-                } else {
-                    // echo "<p>Jakimś cudem dostałeś ten komunikat.</p>";
-                }
+                $obj = new wyszOsob;
+                $obj->wyszukiwanie($sql);
 
                 mysqli_close($sql);
             ?>

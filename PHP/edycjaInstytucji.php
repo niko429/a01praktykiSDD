@@ -34,9 +34,7 @@
         </div>
         <?php
             require_once './config.php';
-
-            $azapytanie = "SELECT * FROM instytucja";
-            $awynik = mysqli_query($sql, $azapytanie);
+            require_once './db.php';
             
             echo "<table class='lewo_ale_klasa'";
                 echo "<tr>";
@@ -48,35 +46,11 @@
                     echo "<th class='podswietlenie'>Strona internetowa</th>";
                     echo "<th class='podswietlenie'>Uwagi</th>";
                 echo "</tr>";
-                while ($awynik1 = mysqli_fetch_row($awynik)) {
-                    echo "<tr>";
-                        echo "<td class='podswietlenie'>$awynik1[0]</td>";
-                        echo "<td class='podswietlenie'>$awynik1[1]</td>";
-                        echo "<td class='podswietlenie'>+48 $awynik1[2]</td>";
-                        echo "<td class='podswietlenie'>$awynik1[3]</td>";
-                        echo "<td class='podswietlenie'>$awynik1[4]</td>";
-                        echo "<td class='podswietlenie'><a href='$awynik1[5]' target='_blank'>Strona podpięta</a></td>";
-                        if ($awynik1[6] == ""){
-                            echo "<td class='podswietlenie' title='Zostało to wypełnione automatycznie przez skrypt'><i>Brak uwag</i></td>";
-                        } else {
-                            echo "<td class='podswietlenie'>$awynik1[6]</td>";
-                        }
-                    echo "</tr>";
-                }
+                $obj = new editInst;
+                $obj->lista($sql);
             echo "</table>";
 
-            if ($_SERVER["REQUEST_METHOD"] === "POST"){
-                $naz = isset($_POST["naz"]) ? htmlspecialchars($_POST["naz"]) : "";
-                $tel = isset($_POST["tel"]) ? htmlspecialchars($_POST["tel"]) : "";
-                $mail = isset($_POST["mail"]) ? htmlspecialchars($_POST["mail"]) : "";
-                $ad = isset($_POST["ad"]) ? htmlspecialchars($_POST["ad"]) : "";
-                $str = isset($_POST["str"]) ? htmlspecialchars($_POST["str"]) : "";
-                $uwa = isset($_POST["uwa"]) ? htmlspecialchars($_POST["uwa"]) : "";
-                $id = isset($_POST["id"]) ? $_POST["id"] : "";
-            }
-
-            $zapytanie = "UPDATE instytucja set nazwa='$naz', telefon='$tel', email='$mail', adres='$ad', strona_internetowa='$str', uwagi='$uwa' where id='$id'";
-            $wynik = mysqli_query($sql,$zapytanie);
+            $obj->edycja($sql);
 
             mysqli_close($sql);
         ?>

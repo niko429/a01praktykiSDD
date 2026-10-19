@@ -31,42 +31,10 @@
             <h3>Wynik</h2>
             <?php
                 require_once './config.php';
+                require_once './db.php';
 
-                if ($_SERVER["REQUEST_METHOD"] === "POST"){
-                    $nazinst = isset($_POST["nazinst"]) ? htmlspecialchars($_POST["nazinst"]) : "";
-                    $tel = isset($_POST["tel"]) ? htmlspecialchars($_POST["tel"]) : "";
-                    $mail = isset($_POST["mail"]) ? htmlspecialchars($_POST["mail"]) : "";
-                    $adres = isset($_POST["ad"]) ? htmlspecialchars($_POST["ad"]) : "";
-                    $stro = isset($_POST["str"]) ? htmlspecialchars($_POST["str"]) : "";
-                    $naz = isset($_POST["naz"]) ? htmlspecialchars($_POST["naz"]) : "";
-
-                    $zapytanie = "SELECT instytucja.id, instytucja.nazwa, instytucja.telefon, instytucja.email, instytucja.adres, instytucja.strona_internetowa, osoba.nazwisko from instytucja inner join osoba on osoba.id = instytucja.id where osoba.nazwisko like '$naz%'";
-                    $wynik = mysqli_query($sql, $zapytanie);
-                    $wynik1 = mysqli_fetch_row($wynik);
-
-                    echo "<table style='margin: none auto;'>";
-                        echo "<tr>";
-                            echo "<th class='podswietlenie'>Id</th>";
-                            echo "<th class='podswietlenie'>Nazwa inst.</th>";
-                            echo "<th class='podswietlenie'>Nr. Telefonu</th>";
-                            echo "<th class='podswietlenie'>E-mail</th>";
-                            echo "<th class='podswietlenie'>Adres</th>";
-                            echo "<th class='podswietlenie'>Str. internetowa</th>";
-                            echo "<th class='podswietlenie'>Nazwisko</th>";
-                        echo "</tr>";
-                        echo "<tr>";
-                            echo "<td class='podswietlenie'>$wynik1[0]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[1]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[2]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[3]</td>";
-                            echo "<td class='podswietlenie'>$wynik1[4]</td>";
-                            echo "<td class='podswietlenie'><a href='$wynik1[5]' target='_blank'>Strona</a></td>";
-                            echo "<td class='podswietlenie'>$wynik1[6]</td>";
-                        echo "</tr>";
-                    echo "</table>";
-                } else {
-                    // echo "<p>Jakimś cudem dostałeś ten komunikat.</p>";
-                }
+                $obj = new wyszInst();
+                $obj->wyszukiwanie($sql);
 
                 mysqli_close($sql)
             ?>

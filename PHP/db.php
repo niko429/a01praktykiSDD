@@ -431,9 +431,9 @@
                 $id = isset($_POST["id"]) ? $_POST["id"] : "";
             }
 
-            $zapytanie = "UPDATE instytucja set nazwa=?, telefon=?, email=?, adres=?, strona_internetowa=?, uwagi=? where id='$id'";
+            $zapytanie = "UPDATE instytucja set nazwa=?, telefon=?, email=?, adres=?, strona_internetowa=?, uwagi=? where id=?";
             if ($stmt = mysqli_prepare($sql,$zapytanie)){
-                mysqli_stmt_bind_param($stmt, "ssssss", $naz, $tel, $mail, $ad, $str, $uwa);
+                mysqli_stmt_bind_param($stmt, "ssssssi", $naz, $tel, $mail, $ad, $str, $uwa, $id);
                 if (mysqli_stmt_execute($stmt)){
                     // echo "<p>Udało się zaktulizować dane!</p>";
                 } else {
